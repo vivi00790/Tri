@@ -14,9 +14,11 @@ namespace Tri
         }
 
         [Test]
-        public void NotTriangle()
+        [TestCase(1,2,3)]
+        [TestCase(1,1,3)]
+        public void NotTriangle(int edge1, int edge2, int edge3)
         {
-            Assert.AreEqual("not triangle", Triangle.GetType(1, 2, 3));
+            Assert.AreEqual("not triangle", Triangle.GetType(edge1, edge2, edge3));
         }
 
         [Test]
