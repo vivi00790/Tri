@@ -29,7 +29,7 @@ namespace Tri
         public void IsoscelesTriangle()
         {
             Assert.AreEqual("acute isosceles triangle", Tringle.GetType(3, 3, 2));
-            Assert.AreEqual("acute isosceles triangle", Tringle.GetType(3, 3, 4));
+            Assert.AreEqual("obtuse isosceles triangle", Tringle.GetType(3, 3, 5));
         }
 
         [Test]
@@ -42,6 +42,12 @@ namespace Tri
         public void AcuteTriangle()
         {
             Assert.AreEqual("acute triangle", Tringle.GetType(10, 19, 21));
+        }
+
+        [Test]
+        public void RightTriangle()
+        {
+            Assert.AreEqual("right triangle", Tringle.GetType(3, 4, 5));
         }
     }
 }

@@ -26,14 +26,13 @@ namespace Tri
                 return AddPrefix(TriangleTypePrefix.Not, result);
             }
 
-            if (longestEdge == secondLongestEdge)
+            if (edges.GroupBy(x => x).Count() == 1)
             {
+                return AddPrefix(TriangleTypePrefix.Regular, result);
+            }
 
-                if (secondLongestEdge == shortestEdge)
-                {
-                    return AddPrefix(TriangleTypePrefix.Regular, result);
-                }
-
+            if (edges.GroupBy(x => x).Count() == 2)
+            {
                 result = AddPrefix(TriangleTypePrefix.Isosceles, result);
             }
 
