@@ -24,5 +24,11 @@ namespace Tri
         {
             Assert.AreEqual("regular triangle", Tringle.getType(3, 3, 3));
         }
+
+        [Test]
+        public void IsoscelesTriangle()
+        {
+            Assert.AreEqual("isosceles triangle", Tringle.getType(3, 3, 2));
+        }
     }
 }
