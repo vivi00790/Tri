@@ -18,5 +18,11 @@ namespace Tri
         {
             Assert.AreEqual("not triangle", Tringle.getType(1, 2, 3));
         }
+
+        [Test]
+        public void RegularTriangle()
+        {
+            Assert.AreEqual("regular triangle", Tringle.getType(3, 3, 3));
+        }
     }
 }
