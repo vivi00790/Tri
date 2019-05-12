@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Tri
 {
-    class Tri
+    public class Tri
     {
         public string getType(int edge1, int edge2, int edge3)
         {
-            return "";
+            return "not triangle";
         }
     }
 }
