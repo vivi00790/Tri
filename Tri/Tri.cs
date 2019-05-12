@@ -10,6 +10,10 @@ namespace Tri
     {
         public string getType(int edge1, int edge2, int edge3)
         {
+            if (edge1 == edge2 && edge2 == edge3)
+            {
+                return "regular triangle";
+            }
             return "not triangle";
         }
     }
