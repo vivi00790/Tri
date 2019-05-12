@@ -61,5 +61,12 @@ namespace Tri
         {
             Assert.AreEqual("right triangle", Tringle.GetType(edge1, edge2, edge3));
         }
+
+        [Test]
+        public void InputNearIntegerMax()
+        {
+            Assert.AreEqual("regular triangle", Tringle.GetType(int.MaxValue, int.MaxValue, int.MaxValue));
+            Assert.AreEqual("acute isosceles triangle", Tringle.GetType(int.MaxValue-1, int.MaxValue-1, int.MaxValue));
+        }
     }
 }
