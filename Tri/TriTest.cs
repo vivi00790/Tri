@@ -16,19 +16,19 @@ namespace Tri
         [Test]
         public void NotTriangle()
         {
-            Assert.AreEqual("not triangle", Tringle.getType(1, 2, 3));
+            Assert.AreEqual("not triangle", Tringle.GetType(1, 2, 3));
         }
 
         [Test]
         public void RegularTriangle()
         {
-            Assert.AreEqual("regular triangle", Tringle.getType(3, 3, 3));
+            Assert.AreEqual("regular triangle", Tringle.GetType(3, 3, 3));
         }
 
         [Test]
         public void IsoscelesTriangle()
         {
-            Assert.AreEqual("isosceles triangle", Tringle.getType(3, 3, 2));
+            Assert.AreEqual("isosceles triangle", Tringle.GetType(3, 3, 2));
         }
     }
 }
