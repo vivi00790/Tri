@@ -23,22 +23,27 @@ namespace Tri
 
             if (longestEdge >= secondLongestEdge + shortestEdge)
             {
-                return $"{TriangleTypePrefix.Not.ToString().ToLower()} {result}";
+                return AddPrefix(TriangleTypePrefix.Not, result);
             }
 
             if (longestEdge == secondLongestEdge)
             {
-                result = secondLongestEdge == shortestEdge ? $"{TriangleTypePrefix.Regular.ToString().ToLower()} {result}" : $"{TriangleTypePrefix.Isosceles.ToString().ToLower()} {result}";
+                result = secondLongestEdge == shortestEdge ? AddPrefix(TriangleTypePrefix.Regular, result) : AddPrefix(TriangleTypePrefix.Isosceles, result);
             }
 
             if (longestEdgeSquare > secondLongestEdgeSquare + shortestEdgeSquare)
             {
-                result = $"{TriangleTypePrefix.Obtuse.ToString().ToLower()} {result}";
+                result = AddPrefix(TriangleTypePrefix.Obtuse, result);
             }
 
 
 
             return result;
+        }
+
+        private static string AddPrefix(TriangleTypePrefix triangleTypePrefix, string originalString)
+        {
+            return $"{triangleTypePrefix.ToString().ToLower()} {originalString}";
         }
 
         private enum TriangleTypePrefix
