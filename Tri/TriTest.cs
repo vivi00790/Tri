@@ -30,5 +30,11 @@ namespace Tri
         {
             Assert.AreEqual("isosceles triangle", Tringle.GetType(3, 3, 2));
         }
+
+        [Test]
+        public void ObtuseTriangle()
+        {
+            Assert.AreEqual("obtuse triangle", Tringle.GetType(3, 4, 6));
+        }
     }
 }
