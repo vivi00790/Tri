@@ -36,5 +36,11 @@ namespace Tri
         {
             Assert.AreEqual("obtuse triangle", Tringle.GetType(3, 4, 6));
         }
+
+        [Test]
+        public void AcuteTriangle()
+        {
+            Assert.AreEqual("acute triangle", Tringle.GetType(3, 4, 4));
+        }
     }
 }
