@@ -70,5 +70,16 @@ namespace Tri
             Assert.AreEqual("not triangle", Triangle.GetType(unchecked(int.MaxValue + 1), int.MaxValue - 1, int.MaxValue));
             Assert.AreEqual("acute triangle", Triangle.GetType(int.MaxValue -2, int.MaxValue - 1, int.MaxValue));
         }
+
+
+        [Test]
+        [TestCase(-1,0,1)]
+        [TestCase(-1,-2,-3)]
+        [TestCase(-1,-2,0)]
+        [TestCase(0,0,0)]
+        public void InvalidInput(int edge1, int edge2, int edge3)
+        {
+            Assert.AreEqual("not triangle", Triangle.GetType(edge1, edge2, edge3));
+        }
     }
 }
