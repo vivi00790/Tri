@@ -46,6 +46,11 @@ namespace Tri
                 result = AddPrefix(TriangleTypePrefix.Acute, result);
             }
 
+            if (longestEdgeSquare == secondLongestEdgeSquare + shortestEdgeSquare)
+            {
+                result = AddPrefix(TriangleTypePrefix.Right, result);
+            }
+
             return result;
         }
 
@@ -60,7 +65,8 @@ namespace Tri
             Regular,
             Isosceles,
             Obtuse,
-            Acute
+            Acute,
+            Right
         }
     }
 }
