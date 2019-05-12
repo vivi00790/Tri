@@ -1,14 +1,22 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace Tri
 {
-    [TestClass]
+    [TestFixture]
     public class TriTest
     {
-        [TestMethod]
-        public void TestMethod1()
+        public Tri Tringle;
+        [SetUp]
+        public void SetUp()
         {
+            Tringle = new Tri();
+        }
+
+        [Test]
+        public void NotTriangle()
+        {
+            Assert.AreEqual("not triangle", Tringle.getType(1, 2, 3));
         }
     }
 }
