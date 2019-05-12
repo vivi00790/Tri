@@ -16,14 +16,9 @@ namespace Tri
             var secondLongestEdge = edges[1];
             var shortestEdge = edges[0];
 
-            if (longestEdge == secondLongestEdge && secondLongestEdge == shortestEdge)
+            if (longestEdge == secondLongestEdge)
             {
-                return "regular triangle";
-            }
-
-            if (longestEdge == secondLongestEdge && secondLongestEdge != shortestEdge)
-            {
-                return "isosceles triangle";
+                return secondLongestEdge == shortestEdge ? "regular triangle" : "isosceles triangle";
             }
             return "not triangle";
         }
