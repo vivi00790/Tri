@@ -15,11 +15,27 @@ namespace Tri
             var longestEdge = edges[2];
             var secondLongestEdge = edges[1];
             var shortestEdge = edges[0];
+            var longestEdgeSquare = edges[2]* edges[2];
+            var secondLongestEdgeSquare = edges[1] * edges[1];
+            var shortestEdgeSquare = edges[0] * edges[0];
+
+            if (longestEdge >= secondLongestEdge + shortestEdge)
+            {
+                return "not triangle";
+            }
 
             if (longestEdge == secondLongestEdge)
             {
                 return secondLongestEdge == shortestEdge ? "regular triangle" : "isosceles triangle";
             }
+
+            if (longestEdgeSquare > secondLongestEdgeSquare + shortestEdgeSquare)
+            {
+                return "obtuse triangle";
+            }
+
+
+
             return "not triangle";
         }
     }
