@@ -10,7 +10,7 @@ namespace Tri
     {
         public string GetType(int edge1, int edge2, int edge3)
         {
-            int[] edges = {edge1, edge2, edge3};
+            long[] edges = {edge1, edge2, edge3};
             Array.Sort(edges);
             var result = "triangle";
             
@@ -54,12 +54,12 @@ namespace Tri
             return result;
         }
 
-        private static bool OnlyTwoEdgesAreEqual(int[] edges)
+        private static bool OnlyTwoEdgesAreEqual(long[] edges)
         {
             return edges.GroupBy(x => x).Count() == 2;
         }
 
-        private static bool AllEdgesAreEqual(int[] edges)
+        private static bool AllEdgesAreEqual(long[] edges)
         {
             return edges.GroupBy(x => x).Count() == 1;
         }
