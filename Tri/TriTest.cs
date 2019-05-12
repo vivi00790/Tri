@@ -67,6 +67,8 @@ namespace Tri
         {
             Assert.AreEqual("regular triangle", Tringle.GetType(int.MaxValue, int.MaxValue, int.MaxValue));
             Assert.AreEqual("acute isosceles triangle", Tringle.GetType(int.MaxValue-1, int.MaxValue-1, int.MaxValue));
+            Assert.AreEqual("not triangle", Tringle.GetType(unchecked(int.MaxValue + 1), int.MaxValue - 1, int.MaxValue));
+            Assert.AreEqual("acute triangle", Tringle.GetType(int.MaxValue -2, int.MaxValue - 1, int.MaxValue));
         }
     }
 }

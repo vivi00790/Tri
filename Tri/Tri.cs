@@ -10,10 +10,15 @@ namespace Tri
     {
         public string GetType(int edge1, int edge2, int edge3)
         {
+            var result = "triangle";
+            if (edge1 < 0 || edge2 < 0 || edge3 < 0)
+            {
+                return AddPrefix(TriangleTypePrefix.Not, result);
+            }
+
             long[] edges = {edge1, edge2, edge3};
             Array.Sort(edges);
-            var result = "triangle";
-            
+
             var longestEdge = edges[2];
             var secondLongestEdge = edges[1];
             var shortestEdge = edges[0];
