@@ -12,6 +12,8 @@ namespace Tri
         {
             int[] edges = {edge1, edge2, edge3};
             Array.Sort(edges);
+            var result = "triangle";
+            
             var longestEdge = edges[2];
             var secondLongestEdge = edges[1];
             var shortestEdge = edges[0];
@@ -21,22 +23,30 @@ namespace Tri
 
             if (longestEdge >= secondLongestEdge + shortestEdge)
             {
-                return "not triangle";
+                return $"{TriangleTypePrefix.Not.ToString().ToLower()} {result}";
             }
 
             if (longestEdge == secondLongestEdge)
             {
-                return secondLongestEdge == shortestEdge ? "regular triangle" : "isosceles triangle";
+                result = secondLongestEdge == shortestEdge ? $"{TriangleTypePrefix.Regular.ToString().ToLower()} {result}" : $"{TriangleTypePrefix.Isosceles.ToString().ToLower()} {result}";
             }
 
             if (longestEdgeSquare > secondLongestEdgeSquare + shortestEdgeSquare)
             {
-                return "obtuse triangle";
+                result = $"{TriangleTypePrefix.Obtuse.ToString().ToLower()} {result}";
             }
 
 
 
-            return "not triangle";
+            return result;
+        }
+
+        private enum TriangleTypePrefix
+        {
+            Not,
+            Regular,
+            Isosceles,
+            Obtuse
         }
     }
 }
