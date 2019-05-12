@@ -26,12 +26,12 @@ namespace Tri
                 return AddPrefix(TriangleTypePrefix.Not, result);
             }
 
-            if (edges.GroupBy(x => x).Count() == 1)
+            if (AllEdgesAreEqual(edges))
             {
                 return AddPrefix(TriangleTypePrefix.Regular, result);
             }
 
-            if (edges.GroupBy(x => x).Count() == 2)
+            if (OnlyTwoEdgesAreEqual(edges))
             {
                 result = AddPrefix(TriangleTypePrefix.Isosceles, result);
             }
@@ -52,6 +52,16 @@ namespace Tri
             }
 
             return result;
+        }
+
+        private static bool OnlyTwoEdgesAreEqual(int[] edges)
+        {
+            return edges.GroupBy(x => x).Count() == 2;
+        }
+
+        private static bool AllEdgesAreEqual(int[] edges)
+        {
+            return edges.GroupBy(x => x).Count() == 1;
         }
 
         private static string AddPrefix(TriangleTypePrefix triangleTypePrefix, string originalString)
