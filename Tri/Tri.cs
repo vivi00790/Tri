@@ -28,7 +28,13 @@ namespace Tri
 
             if (longestEdge == secondLongestEdge)
             {
-                result = secondLongestEdge == shortestEdge ? AddPrefix(TriangleTypePrefix.Regular, result) : AddPrefix(TriangleTypePrefix.Isosceles, result);
+
+                if (secondLongestEdge == shortestEdge)
+                {
+                    return AddPrefix(TriangleTypePrefix.Regular, result);
+                }
+
+                result = AddPrefix(TriangleTypePrefix.Isosceles, result);
             }
 
             if (longestEdgeSquare > secondLongestEdgeSquare + shortestEdgeSquare)
@@ -36,7 +42,10 @@ namespace Tri
                 result = AddPrefix(TriangleTypePrefix.Obtuse, result);
             }
 
-
+            if (longestEdgeSquare < secondLongestEdgeSquare + shortestEdgeSquare)
+            {
+                result = AddPrefix(TriangleTypePrefix.Acute, result);
+            }
 
             return result;
         }
@@ -51,7 +60,8 @@ namespace Tri
             Not,
             Regular,
             Isosceles,
-            Obtuse
+            Obtuse,
+            Acute
         }
     }
 }
