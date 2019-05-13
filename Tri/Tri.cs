@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Linq;      
 
 namespace Tri
 {
@@ -16,13 +14,13 @@ namespace Tri
                 return AddPrefix(TriangleTypePrefix.Not, result);
             }
 
-            long[] edges = {edge1, edge2, edge3};
+            long[] edges = { edge1, edge2, edge3 };
             Array.Sort(edges);
 
             var longestEdge = edges[2];
             var secondLongestEdge = edges[1];
             var shortestEdge = edges[0];
-            var longestEdgeSquare = edges[2]* edges[2];
+            var longestEdgeSquare = edges[2] * edges[2];
             var secondLongestEdgeSquare = edges[1] * edges[1];
             var shortestEdgeSquare = edges[0] * edges[0];
 
@@ -59,12 +57,12 @@ namespace Tri
             return result;
         }
 
-        private static bool OnlyTwoEdgesAreEqual(long[] edges)
+        private static bool OnlyTwoEdgesAreEqual(IEnumerable<long> edges)
         {
             return edges.GroupBy(x => x).Count() == 2;
         }
 
-        private static bool AllEdgesAreEqual(long[] edges)
+        private static bool AllEdgesAreEqual(IEnumerable<long> edges)
         {
             return edges.GroupBy(x => x).Count() == 1;
         }
